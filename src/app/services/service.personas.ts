@@ -4,7 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 @Injectable()
-export class ServicePersona{
+export class ServicePersonas{
     //PARA PODER REALIZAR PETICIONES, NECESITAMOS EL OBJETO
     //HttpClient
     //DICHO OBJETO DEBEMOS INYECTARLO EN LAS CLASES QUE UTILICEMOS CON APIS
@@ -16,5 +16,16 @@ export class ServicePersona{
         let request="api/personas";
 
         return this._http.get(urlApi+request);
+    }
+
+    getPersonaPromise(): Promise<any>{
+        let urlApi="https://servicioapipersonasmvcpgs.azurewebsites.net/";
+        let request="api/personas";
+        let promise= new Promise((resolve)=>{
+            this._http.get(urlApi+request).subscribe(response=>{
+                resolve(response);
+            })
+        })
+        return promise;
     }
 }
