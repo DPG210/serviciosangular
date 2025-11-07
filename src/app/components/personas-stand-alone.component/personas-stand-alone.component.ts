@@ -7,7 +7,7 @@ import { NgFor, NgIf } from '@angular/common';
   standalone: true,
   templateUrl: './personas-stand-alone.component.html',
   styleUrl: './personas-stand-alone.component.css',
-  imports:[NgFor, NgIf]
+  
 })
 export class PersonasStandAloneComponent {
   public personas!:Array<Persona>;
