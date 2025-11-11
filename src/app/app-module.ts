@@ -9,12 +9,14 @@ import { ServicePersonas } from './services/service.personas';
 import { PersonasStandAloneComponent } from './components/personas-stand-alone.component/personas-stand-alone.component';
 import { CochesComponent } from './components/coches.component/coches.component';
 import { ServiceCoche } from './services/service.coche';
+import { PlantillaFuncionSimple } from './complements/plantilla-funcion-simple/plantilla-funcion-simple';
 
 @NgModule({
   declarations: [
     App,
     PersonasApiComponent,
     CochesComponent,
+    PlantillaFuncionSimple,
   ],
   imports: [
     BrowserModule,
