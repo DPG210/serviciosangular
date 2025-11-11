@@ -2,6 +2,8 @@ import { Injectable } from "@angular/core";
 import { Persona } from "../models/persona";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { Global } from "../global";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class ServicePersonas{
@@ -12,14 +14,14 @@ export class ServicePersonas{
     //SI VAMOS A DEVOLVER LA PETICION, EL OBJETO A DEVOLVER ES 
     //UN Observable<any> PARA PODER SUBSCRIBIRNOS
     getPersonas(): Observable<any>{
-        let urlApi="https://servicioapipersonasmvcpgs.azurewebsites.net/";
+        let urlApi=environment.urlApiPersonas;
         let request="api/personas";
 
         return this._http.get(urlApi+request);
     }
 
     getPersonaPromise(): Promise<any>{
-        let urlApi="https://servicioapipersonasmvcpgs.azurewebsites.net/";
+        let urlApi=environment.urlApiPersonas;
         let request="api/personas";
         let promise= new Promise((resolve)=>{
             this._http.get(urlApi+request).subscribe(response=>{
