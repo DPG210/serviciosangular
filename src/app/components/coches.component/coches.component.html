@@ -1,0 +1,10 @@
+<div>
+    <h1>Coches</h1>
+    @for(car of coches; track car){
+    <div>
+        <h3>{{car.marca}}{{car.modelo}}</h3>
+        <img src={{car.imagen}} alt="">
+        <h4>{{car.conductor}}</h4>
+    </div>
+    }
+</div>
