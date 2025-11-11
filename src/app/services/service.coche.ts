@@ -6,32 +6,34 @@ import { Observable } from "rxjs";
 
 @Injectable()
 export class ServiceCoche{
-    constructor(private _http: HttpClient){}
+    // constructor(private _http: HttpClient){}
 
-    getCochesHttpCLient(): Observable<any>{
-        let request="webresources/coches";
-        let url= environment.urlApiCoches + request;
-        return this._http.get(url);
-    }
+    // //RECOMENDADO ANGULAR
+    // getCochesHttpCLient(): Observable<any>{
+    //     let request="webresources/coches";
+    //     let url= environment.urlApiCoches + request;
+    //     return this._http.get(url);
+    // }
 
-    getCochesPromise():Promise<any>{
-        let request="webresources/coches";
-        let url= environment.urlApiCoches + request;
-        console.log(url)
-        let promise=new Promise((resolve)=>{
-            fetch(url).then(response=>{
-            resolve(response.json());
-            })
-        })
-        return promise;
+    // getCochesPromise():Promise<any>{
+    //     let request="webresources/coches";
+    //     let url= environment.urlApiCoches + request;
+    //     console.log(url)
+    //     let promise=new Promise((resolve)=>{
+    //         fetch(url).then(response=>{
+    //         resolve(response.json());
+    //         })
+    //     })
+    //     return promise;
         
-    }
+    // }
 
+    //TIPADO DE DATOS, NO HACE FALTA CONSTRUCTOR
     getCoches():Promise <Array<Coche>> {
         let request="webresources/coches";
         let url= environment.urlApiCoches + request;
         //EXTRAER LOS DATOS TENEMOS QUE SEGUIR HACIENDOLO
-        //LA DIFERENCIA ESTA EN LA Sintaxis
+        //LA DIFERENCIA ESTA EN LA SINTAXIS
         const coches=
         fetch(url).then(response=>response.json());
         return coches;

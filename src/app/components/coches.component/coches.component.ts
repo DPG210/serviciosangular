@@ -16,7 +16,7 @@ export class CochesComponent implements OnInit{
   ngOnInit(): void {
     // this.coches=this._service.getCoches();
 
-    this._service.getCochesPromise().then((response)=>{
+    this._service.getCoches().then((response)=>{
       this.coches=response;
     })
     
